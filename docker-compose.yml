@@ -1,0 +1,21 @@
+version: '2'
+services:
+
+  # data only container pattern
+  data:
+    image: debian:jessie
+    volumes:
+      - .:/data
+
+  changelog:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+      args:
+        http_proxy:
+    image: muccg/github-changelog-generator
+    network_mode: host
+    environment:
+      something: somevalue
+    volumes_from:
+      - data

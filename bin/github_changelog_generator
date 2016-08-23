@@ -1,0 +1,10 @@
+#!/bin/bash
+github_changelog_generator="docker run --rm \
+                    --interactive \
+                    --tty \
+                    --net "host" \
+                    -v "$(pwd):$(pwd)" \
+                    -w $(pwd)
+                    -it muccg/github-changelog-generator"
+
+exec $github_changelog_generator $*
