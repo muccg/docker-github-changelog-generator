@@ -3,7 +3,6 @@ MAINTAINER https://github.com/muccg
 
 ENV GITHUB_CHANGELOG_GENERATOR_VERSION 1.13.1
 
-# install and use wget to fetch the package that does the puppetlabs repo setup
 RUN apt-get update && apt-get install -qy --no-install-recommends \
    git \
    ruby \
