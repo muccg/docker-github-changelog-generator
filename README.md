@@ -20,6 +20,6 @@ docker run --rm \
            --tty \
            --net "host" \
            -v "$(pwd):$(pwd)" \
-           -w $(pwd)
+           -w $(pwd) \
            -it muccg/github-changelog-generator --help
 ```
