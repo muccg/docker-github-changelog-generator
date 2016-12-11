@@ -1,0 +1,22 @@
+version: '2'
+services:
+
+  dev:
+    build:
+      context: ./
+      args:
+        ARG_GITHUB_CHANGELOG_GENERATOR_VERSION: ${DOCKER_GITHUB_CHANGELOG_GENERATOR_VERSION}
+        http_proxy:
+    image: muccg/github-changelog-generator:${GIT_BRANCH}
+
+  prod:
+    extends:
+      file: docker-compose-build.yml
+      service: dev
+    image: muccg/github-changelog-generator:${DOCKER_GITHUB_CHANGELOG_GENERATOR_VERSION}
+
+  latest:
+    extends:
+      file: docker-compose-build.yml
+      service: dev
+    image: muccg/github-changelog-generator:latest
