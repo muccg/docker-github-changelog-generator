@@ -8,12 +8,7 @@ services:
       - .:/data
 
   changelog:
-    build:
-      context: ./
-      dockerfile: Dockerfile
-      args:
-        http_proxy:
-    image: muccg/github-changelog-generator
+    image: muccg/github-changelog-generator:latest
     network_mode: host
     environment:
       something: somevalue
