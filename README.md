@@ -18,7 +18,6 @@ Invoke using docker run:
 docker run --rm \
            --interactive \
            --tty \
-           --net "host" \
            -v "$(pwd):$(pwd)" \
            -w $(pwd)
            -it muccg/github-changelog-generator --help
